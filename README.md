@@ -1,6 +1,6 @@
 # asb_frontend_task
 
-Used ReactJS to build the web application as designed in Figma (link: https://bit.ly/3ohCFZU).
+Used ReactJS to build the https://asb-frontend-task.vercel.app/divisions web application as designed in Figma (link: https://bit.ly/3ohCFZU).
 
 ## Available Scripts
 
