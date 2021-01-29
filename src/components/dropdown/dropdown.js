@@ -1,21 +1,28 @@
 import React from "react";
 
+import { userIcon, chevronIcon, menuIcon } from "../../assets/svg";
+
 import "./dropdown.scss";
 
-const DropDown = ({ children }) => (
-  <div className="dropdown_div">
+const DropDown = ({ inNavbar, children }) => (
+  <div className="dropdown_container">
     <button
-      className="drop"
+      className="dropdown_toggle"
       id="dropdown001"
       data-toggle="dropdown"
       aria-haspopup="true"
       aria-expanded="false"
     >
-      Action
-      <img
-        src="https://res.cloudinary.com/the-now-entity/image/upload/q_auto/v1611588109/Lendha/arrow_down_fl8joq.svg"
-        alt=""
-      />
+      <div className="toggle_div">
+        {inNavbar ? (
+          <React.Fragment>
+            <img className="user" src={userIcon} alt="" />
+            <img className="chevron" src={chevronIcon} alt="" />
+          </React.Fragment>
+        ) : (
+          <img className="menu_icon" src={menuIcon} alt="" />
+        )}
+      </div>
     </button>
     <div className="dropdown-menu" aria-labelledby="dropdown001">
       {children}

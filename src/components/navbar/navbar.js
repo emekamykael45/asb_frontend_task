@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import Dropdown from "../dropdown/dropdown";
+import SearchInput from "../search-input/search-input";
+
 import {
   logoIcon,
   navMenuIcon,
   homeIcon,
   entriesIcon,
   divisionsIcon,
+  notificationIcon,
 } from "../../assets/svg";
 
 import "./navbar.scss";
@@ -26,10 +30,11 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-md fixed-top">
+    <nav className="navbar navbar-expand-lg fixed-top">
       <div className="container-fluid">
-        <Link to="/">
-          <img src={logoIcon} className="logo" alt="" />
+        <Link to="/" className="logo_div">
+          <img src={logoIcon} alt="" />
+          <p>FE Engineer Test 1</p>
         </Link>
         <button
           className="navbar-toggler"
@@ -42,15 +47,14 @@ const NavBar = () => {
           onClick={() => setCollapseNavbar(false)}
         >
           <span className="navbar-toggler-icon">
-            <img className="menu" alt="" src={navMenuIcon} />
+            <img className="menu" src={navMenuIcon} alt="" />
           </span>
         </button>
         <div
           className={`collapse navbar-collapse ${collapseNavbar && "hide"}`}
           id="navbarsExample08"
         >
-          <ul className="navbar-nav mr-auto"></ul>
-          <ul className="navbar-nav mr-right">
+          <ul className="navbar-nav mr-auto">
             {navLinks.map((link, i) => (
               <NavLink
                 key={i}
@@ -59,31 +63,33 @@ const NavBar = () => {
                 to={link.to}
                 onClick={() => toggleNavbarCollapse()}
               >
-                {link.name}
+                <img className="icon" src={link.icon} alt="" />
+                <p>{link.name}</p>
               </NavLink>
             ))}
-            <li className="nav-item dropdown signed_in_div">
-              <Link
-                className="nav-link"
-                to="#"
-                id="dropdown01"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <div className="username">
-                  <p>Hello</p>
-                  <img src="" alt="" />
-                </div>
-              </Link>
-              <div className="dropdown-menu" aria-labelledby="dropdown01">
-                <NavLink className="dropdown-item" to="/">
-                  Home
-                </NavLink>
-                <hr />
-                <button className="dropdown-item">Logout</button>
-              </div>
+          </ul>
+          <ul className="navbar-nav mr-right">
+            <li className="nav-item">
+              <SearchInput />
             </li>
+            <div className="d-flex">
+              <li className="nav-item">
+                <img
+                  className="notification_img"
+                  src={notificationIcon}
+                  alt=""
+                />
+              </li>
+              <li className="nav-item">
+                <Dropdown inNavbar>
+                  <Link className="dropdown-item" to="/">
+                    Home
+                  </Link>
+                  <hr />
+                  <button className="dropdown-item">Logout</button>
+                </Dropdown>
+              </li>
+            </div>
           </ul>
         </div>
       </div>

@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# asb_frontend_task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Used ReactJS to build the web application as designed in Figma (link: https://bit.ly/3ohCFZU).
 
 ## Available Scripts
 

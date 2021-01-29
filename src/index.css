@@ -30,3 +30,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.section {
+  padding: 0px 25px !important;
+}
+
+@media screen and (max-width: 550px){
+  .section {
+    padding: 0px 12px !important;
+  }
+}

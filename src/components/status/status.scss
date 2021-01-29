@@ -1,18 +1,9 @@
 .status_div {
-  display: flex;
-  align-items: center;
-  padding: 2px 9px;
+  padding: 5px 12px;
   padding-bottom: 3px;
   width: fit-content;
   width: -moz-fit-content;
-  border-radius: 40px;
-
-  span {
-    margin-right: 5px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-  }
+  border-radius: 11px;
 
   p {
     margin: 0;
@@ -24,42 +15,46 @@
   }
 
   &.success {
-    color: #0C4128;
-    background: #D1E7DD;
-    border: 1px dashed #BADBCC;
+    background: #F6F3FF;
 
-    span {
-      background: #0C4128;
-    }
-  }
-
-  &.error {
-    color: #842029;
-    background: #F8D7DA;
-    border: 1px dashed #F5C2C7;
-
-    span {
-      background: #842029;
+    p {
+      color: #8C70FF;
     }
   }
 
   &.warning {
-    color: #664d03;
     background: #fff3cd;
-    border: 1px dashed #ffecb5;
 
-    span {
-      background: #664d03;
+    p {
+      color: #F4B400;
     }
   }
+}
 
-  &.secondary {
-    color: #41464B;
-    background: #E2E3E5;
-    border: 1px dashed #D3D6D8;
+.risk_div {
+  display: flex;
+  align-items: center;
 
-    span {
-      background: #41464B;
-    }
+  &.low {
+    color: #3AB65C;
+  }
+  &.mid {
+    color: #3C3AB6;
+  }
+  &.high {
+    color: #B63A3A;
+  }
+
+  img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    object-fit: none;
+  }
+
+  p {
+    margin: 0;
+    font-size: 0.875em;
+    font-weight: 500;
   }
 }

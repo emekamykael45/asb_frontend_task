@@ -1,32 +1,17 @@
 .sub_section_header {
-  position: relative;
-  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
+
+  .icon {
+    width: 31px;
+    height: 31px;
+    margin-right: 15px;
+  }
 
   h4 {
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.4625em;
-    color: var(--color-blue);
-
-    @media screen and (max-width: 767px){
-      font-size: 1.3em;
-    }
-  }
-
-  hr {
     margin: 0;
-    width: 70px;
-    height: 5px;
-    border: none;
-    background: var(--color-yellow);
-  }
-
-  .close {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 27px;
-    opacity: 1;
-    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.875em;
+    color: #000000;
   }
 }

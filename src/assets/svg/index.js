@@ -2,7 +2,7 @@ import biometricsIcon from "./biometrics.svg";
 import chevronCircleIcon from "./chevron_circle.svg";
 import chevronIcon from "./chevron.svg";
 import divisionsIcon from "./divisions.svg";
-import doorbellIcon from "./doorbell.svg";
+import notificationIcon from "./doorbell.svg";
 import entriesIcon from "./entries.svg";
 import envelopeIcon from "./envelope.svg";
 import highRiskIcon from "./high_risk.svg";
@@ -26,7 +26,7 @@ export {
   chevronCircleIcon,
   chevronIcon,
   divisionsIcon,
-  doorbellIcon,
+  notificationIcon,
   entriesIcon,
   envelopeIcon,
   highRiskIcon,

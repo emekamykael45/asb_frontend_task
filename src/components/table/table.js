@@ -1,10 +1,14 @@
 import React from "react";
 
-import Pagination from "../pagination/pagination";
+import Status from "../status/status";
+import Risk from "../status/risk";
+import DropDown from "../dropdown/dropdown";
+
+import { chevronCircleIcon } from "../../assets/svg";
 
 import "./table.scss";
 
-const Table = ({ headers, children, pageCount, changeData }) => (
+const Table = ({ headers, data }) => (
   <React.Fragment>
     <div className="table-responsive">
       <table className="table">
@@ -15,10 +19,61 @@ const Table = ({ headers, children, pageCount, changeData }) => (
             ))}
           </tr>
         </thead>
-        <tbody>{children}</tbody>
+        <tbody>
+          {data?.map((item, i) => (
+            <tr key={i}>
+              <td>
+                <div className="stacked">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value=""
+                  />
+                  <img
+                    src={chevronCircleIcon}
+                    className="chevron_icon"
+                    alt=""
+                  />
+                </div>
+              </td>
+              <td>{item.name}</td>
+              <td>
+                <div className="stacked">
+                  <h6>{item.state}</h6>
+                  <p>{item.address}</p>
+                </div>
+              </td>
+              <td>
+                <Status
+                  type={item.issues > 0 ? "warning" : "success"}
+                  text={
+                    item.issues > 0
+                      ? `${item.issues} Issues found`
+                      : "No Issues"
+                  }
+                />
+              </td>
+              <td>
+                <div className="stacked">
+                  <h6>
+                    <span></span> {`${item.entries} Unique Entries`}
+                  </h6>
+                  <p>{item.entry_type}</p>
+                </div>
+              </td>
+              <td>
+                <Risk type={item.risk} />
+              </td>
+              <td>
+                <DropDown>
+                  <button className="dropdown-item">View</button>
+                </DropDown>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
-    {pageCount && <Pagination pageCount={pageCount} changeData={changeData} />}
   </React.Fragment>
 );
 

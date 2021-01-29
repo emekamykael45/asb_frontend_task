@@ -1,0 +1,22 @@
+.breadcrumbs_container {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  .crumb {
+
+    &:last-child img {
+      display: none;
+    }
+
+    a {
+      font-size: 0.875em;
+      color: #778699;
+    }
+
+    img {
+      margin: 0 7px;
+    }
+  }
+}
