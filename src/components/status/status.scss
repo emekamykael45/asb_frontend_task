@@ -1,0 +1,65 @@
+.status_div {
+  display: flex;
+  align-items: center;
+  padding: 2px 9px;
+  padding-bottom: 3px;
+  width: fit-content;
+  width: -moz-fit-content;
+  border-radius: 40px;
+
+  span {
+    margin-right: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+  }
+
+  p {
+    margin: 0;
+    margin-top: -2px;
+    width: fit-content;
+    width: -moz-fit-content;
+    font-size: 0.875em;
+    font-weight: 500;
+  }
+
+  &.success {
+    color: #0C4128;
+    background: #D1E7DD;
+    border: 1px dashed #BADBCC;
+
+    span {
+      background: #0C4128;
+    }
+  }
+
+  &.error {
+    color: #842029;
+    background: #F8D7DA;
+    border: 1px dashed #F5C2C7;
+
+    span {
+      background: #842029;
+    }
+  }
+
+  &.warning {
+    color: #664d03;
+    background: #fff3cd;
+    border: 1px dashed #ffecb5;
+
+    span {
+      background: #664d03;
+    }
+  }
+
+  &.secondary {
+    color: #41464B;
+    background: #E2E3E5;
+    border: 1px dashed #D3D6D8;
+
+    span {
+      background: #41464B;
+    }
+  }
+}
